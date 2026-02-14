@@ -44,6 +44,3 @@ build/
 .kotlin
 devserver
 /.idea/
-
-# Local configuration - contains machine-specific paths
-gradle.properties
