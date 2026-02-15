@@ -13,7 +13,6 @@ handling, gameplay systems — this is the simplest place to begin.
    - Set the `HYTALE_HOME` environment variable to point to your Hytale installation directory:
      - **Windows:** `C:/Users/<username>/AppData/Roaming/Hytale`
      - **WSL:** `/mnt/c/Users/<username>/AppData/Roaming/Hytale`
-   - Run the setup script: `./setup-wsl.sh`
 4. Open the project in your favorite IDE, we
    recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/download).
 5. Run the devserver: `gradle devServer`
