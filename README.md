@@ -10,8 +10,9 @@ handling, gameplay systems — this is the simplest place to begin.
 2. [Configure or Install the Java SDK](https://hytalemodding.dev/en/docs/guides/plugin/setting-up-env)
    to use the latest 25 from JetBrains or similar.
 3. **Set up Hytale path** (required for WSL/Windows users):
-   - Install [direnv](https://direnv.net/): `curl -sfL https://direnv.net/install.sh | bash`
-   - Run `direnv allow` in the project directory (this loads `.envrc`)
+   - Set the `HYTALE_HOME` environment variable to point to your Hytale installation directory:
+     - **Windows:** `C:/Users/<username>/AppData/Roaming/Hytale`
+     - **WSL:** `/mnt/c/Users/<username>/AppData/Roaming/Hytale`
    - Run the setup script: `./setup-wsl.sh`
 4. Open the project in your favorite IDE, we
    recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/download).
@@ -39,11 +40,11 @@ For in-depth configuration, you can visit the [ScaffoldIt Plugin Docs](https://s
 Running the dev server in WSL while Hytale is installed on Windows is fully supported:
 
 1. Ensure Hytale is installed on Windows via the Hytale Launcher
-2. The `.envrc` file is pre-configured with the WSL path (`/mnt/c/Users/samue/AppData/Roaming/Hytale`)
-3. Install direnv: `curl -sfL https://direnv.net/install.sh | bash`
-4. Run `direnv allow` to load the environment
-5. Run `./setup-wsl.sh` to configure Gradle (one-time setup)
-6. Start the server: `gradle devServer`
+2. Set the `HYTALE_HOME` environment variable to your WSL path:
+   - Example: `export HYTALE_HOME=/mnt/c/Users/<username>/AppData/Roaming/Hytale`
+   - Add this to your shell profile (e.g., `~/.bashrc` or `~/.zshrc`) to make it persistent
+3. Run `./setup-wsl.sh` to configure Gradle (one-time setup)
+4. Start the server: `gradle devServer`
 
 The setup script writes the Hytale path to your global Gradle configuration (`~/.gradle/gradle.properties`), which is the standard location for machine-specific settings.
 
@@ -58,7 +59,7 @@ The setup script writes the Hytale path to your global Gradle configuration (`~/
 - **Hot-reload doesn't work** –
   _Verify you're using JetBrains Runtime, not a regular JDK._
 - **"Assets are not present" error** –
-  _Make sure `HYTALE_HOME` is set correctly and Hytale is installed on Windows. Run `direnv allow` and then `./setup-wsl.sh` to configure Gradle._
+  _Make sure `HYTALE_HOME` environment variable is set correctly and Hytale is installed on Windows. Run `./setup-wsl.sh` to configure Gradle._
 
 ## Resources
 

@@ -18,8 +18,6 @@ if [ -z "$HYTALE_HOME" ]; then
     echo ""
     echo "Please set it first by running:"
     echo "  export HYTALE_HOME=\"/mnt/c/Users/YOUR_USERNAME/AppData/Roaming/Hytale\""
-    echo ""
-    echo "Or if you're using direnv, run: direnv allow"
     exit 1
 fi
 
